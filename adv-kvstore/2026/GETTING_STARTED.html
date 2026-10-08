@@ -1,0 +1,38 @@
+<h3>Requirements</h3>
+<p><strong>YouTrack 2026.2 or later.</strong></p>
+<p><strong>On YouTrack 2025.x?</strong> Use the latest <strong>1.1.x</strong> version of the app. Open the <strong>Versions</strong> tab on this Marketplace page, download the latest 1.1.x release, and upload the ZIP in YouTrack via <strong>Administration → Apps</strong>.</p>
+
+<h3>1. Install the app</h3>
+<p>Upload the app ZIP to your YouTrack instance via <strong>Admin → Apps</strong>.</p>
+
+<h3>2. Configure ACL (required)</h3>
+<p>Go to <strong>Administration → Apps → Adv.KVStore → Settings</strong> and set allowed groups:</p>
+<ul>
+  <li><strong>Global Scope — Allowed Group</strong> — UserGroup with access to global storage</li>
+  <li><strong>Project Scope — Allowed Group</strong> — UserGroup with access to project storage</li>
+</ul>
+<p><strong>Important:</strong> scopes are disabled by default (403). You must set a group to enable access.</p>
+
+<h3>3. Open Admin Panels</h3>
+<p>Go to <strong>YouTrack Admin → Adv.KVStore</strong> for global management, or <strong>Project Settings → Adv.KVStore</strong> for project-scoped management.</p>
+
+<h3>4. Use from Workflows</h3>
+<p>Workflows interact with the store via HTTP API using <code>http.Connection</code>.</p>
+
+<h4>Configuration (<code>config.js</code>)</h4>
+<pre><code>var YOUTRACK_BASE_URL = 'https://youtrack.instance.url';
+var YOUTRACK_TOKEN = 'perm:YOUR_TOKEN_HERE';
+</code></pre>
+<p><strong>Docker note:</strong> use the <em>internal</em> container port (usually <code>8080</code>), not the host-mapped port. For example, if you run <code>docker run -p 8081:8080 ...</code>, workflows inside the container must use <code>http://localhost:8080</code>.</p>
+
+<h4>Endpoints</h4>
+<ul>
+  <li><strong>Global</strong>: <code>/api/extensionEndpoints/axkvstore/global/{endpoint}</code></li>
+  <li><strong>Project</strong>: <code>/api/admin/projects/{id}/extensionEndpoints/axkvstore/project/{endpoint}</code></li>
+</ul>
+<p>Available endpoints: <code>get</code>, <code>set</code>, <code>delete</code>, <code>drop</code>, <code>flush</code>, <code>blocks</code></p>
+<p><strong>Write only on commit:</strong> <code>kv.setAsync()</code> / <code>kv.delAsync()</code> in <code>kvhelper.js</code> send the write after the workflow transaction succeeds (see HOW_TO_USE).</p>
+<p><strong>Upgrading from 1.x?</strong> The paths changed in 2.0.0 (<code>be</code> → <code>global</code>, <code>be-project</code> → <code>project</code>); update your workflows or take the new <code>kvhelper.js</code>.</p>
+
+<p>See <a href="HOW_TO_USE.md">HOW_TO_USE.md</a> for workflow examples, helper scripts, and full API usage guide.</p>
+<p>See <a href="README.md">README.md</a> for API reference and technical documentation.</p>
