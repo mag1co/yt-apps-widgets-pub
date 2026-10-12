@@ -1,0 +1,23 @@
+# Privacy Policy for Adv.Weekly Report
+
+**Last Updated**: October 3, 2026
+
+## Data Collection
+
+**Adv.Weekly Report does not collect, transmit, or store any telemetry, analytics, or personal data.**
+
+All processing occurs locally within your YouTrack instance and your browser.
+
+## External Services
+
+**The app does not contact any external services.** All export operations (XLSX generation) are performed entirely within the YouTrack app runtime and the user's local browser environment.
+
+## Data Processing
+
+- The app reads YouTrack issues and custom fields via YouTrack's internal API to generate export files and render the dashboard widget
+- Generated XLSX files are constructed locally and delivered directly to the user's browser as downloads without intermediate servers
+- No issue content, user data, or credentials are logged or transmitted to third parties
+
+## Contact
+
+For privacy-related questions, contact: apps@mag1.cc

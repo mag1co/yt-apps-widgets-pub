@@ -1,0 +1,25 @@
+<h3>Requirements</h3>
+<p><strong>YouTrack 2026 or later.</strong> <strong>YouTrack 2026.1.1+</strong> recommended for full functionality (deep-link URLs, browser back/forward navigation).</p>
+<p><strong>On YouTrack 2025.x?</strong> Use the latest <strong>2.8.x</strong> version of the app. Open the <strong>Versions</strong> tab on this Marketplace page, download the latest 2.8.x release, and upload the ZIP in YouTrack via <strong>Administration → Apps</strong>.</p>
+
+<h3>1. Install the app</h3>
+<p>Upload the app ZIP to your YouTrack instance via <strong>Admin → Apps</strong>.</p>
+
+<h3>2. Enable for a project</h3>
+<p>Go to <strong>Project Settings → Portal</strong> tab. Click <strong>Enable Service Center</strong> for the project.</p>
+<p><em>Project Admins</em> (users with <code>UPDATE_PROJECT</code> permission) can manage forms, categories, and titles. Each admin sees only the forms belonging to their own project.</p>
+
+<h3>3. Create forms</h3>
+<p>In the same <strong>Project Settings → Portal</strong> tab, add categories and create forms. Configure fields, mappings, and templates. Publish the form to make it visible in the portal.</p>
+<p><strong>Quick start:</strong> If the project has no forms yet, click <strong>"Prefill with demo data"</strong> to create sample categories and forms instantly.</p>
+
+<h3>4. Open Service Center</h3>
+<p><strong>Service Portal</strong> appears in the YouTrack sidebar menu. Click it to see the catalog of published forms. Users can fill and submit forms to create YouTrack issues.</p>
+
+<h3>5. Settings</h3>
+<p><strong>Administration → Apps → Adv.ServiceCenter → Settings</strong> — configure logging level (no_log, minimal, debug).</p>
+<p><strong>ACL Group Guard:</strong> Optionally restrict who can create <em>All YouTrack Users</em> and <em>Guests (external)</em> forms. Pick a YouTrack group for each access level — only group members will be able to select the corresponding option in the form editor. Leave empty to disable the option for everyone.</p>
+<p><strong>Attachments: max size per file, MB:</strong> Set this to the same value as <em>Server Settings → Max upload file size</em>. YouTrack does not apply its own limit to files attached by an app, so this setting is the only limit for files submitted through forms. Default is 10 MB; values above 50 MB are capped, and one submission may carry 50 MB in total.</p>
+
+<h3>6. Documentation</h3>
+<p>See <a href="README.md">README.md</a> for an overview and <a href="HOW_TO_USE.md">HOW_TO_USE.md</a> for the practical guide.</p>

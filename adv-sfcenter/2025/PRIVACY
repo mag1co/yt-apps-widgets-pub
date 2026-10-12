@@ -1,0 +1,23 @@
+# Privacy Policy for Adv.ServiceCenter
+
+**Last Updated**: April 24, 2026
+
+## Data Collection
+
+**Adv.ServiceCenter does not collect, transmit, or store any telemetry, analytics, or personal data.**
+
+All processing occurs locally within your YouTrack instance.
+
+## External Services
+
+**The app does not contact any external services.** All form processing, issue creation, and configuration management are performed entirely within the YouTrack app runtime.
+
+## Data Processing
+
+- The app renders forms and creates YouTrack issues based on user input and administrator configuration
+- Form definitions and settings are stored in YouTrack app settings and extension properties
+- No form data, user data, or credentials are logged or transmitted to third parties
+
+## Contact
+
+For privacy-related questions, contact: apps@mag1.cc

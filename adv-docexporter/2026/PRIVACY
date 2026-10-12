@@ -1,0 +1,24 @@
+# Privacy Policy for Adv.DocExporter
+
+**Last Updated**: October 3, 2026
+
+## Data Collection
+
+**Adv.DocExporter does not collect, transmit, or store any telemetry, analytics, or personal data.**
+
+All processing occurs locally within your YouTrack instance.
+
+## External Services
+
+**The app does not contact any external services.** All export operations (XLSX, DOCX generation) are performed entirely within the YouTrack app runtime.
+
+## Data Processing
+
+- The app reads Knowledge Base article and issue content via YouTrack's internal API to generate export files
+- Generated files are delivered directly to the user's browser as downloads
+- No article content, user data, or credentials are logged or transmitted to third parties
+- If you tick "Remember these settings in this browser", the export dialog keeps your chosen options (file format, content, formatting) in the app's local storage in your browser. Unticking it and exporting removes them. No article content or personal data is stored there
+
+## Contact
+
+For privacy-related questions, contact: apps@mag1.cc
